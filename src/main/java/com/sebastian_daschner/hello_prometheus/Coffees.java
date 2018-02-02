@@ -1,22 +1,20 @@
 package com.sebastian_daschner.hello_prometheus;
 
-import io.prometheus.client.Counter;
+import org.eclipse.microprofile.metrics.Counter;
+import org.eclipse.microprofile.metrics.annotation.Counted;
+import org.eclipse.microprofile.metrics.annotation.Metric;
 
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
+import javax.inject.Inject;
 
-@ApplicationScoped
 public class Coffees {
 
-    private Counter consumedCoffees;
+    @Inject
+    @Metric(name = "total_coffees_consumed", absolute = true)
+    Counter coffeesConsumed;
 
-    @PostConstruct
-    private void initCounter() {
-        consumedCoffees = Counter.build("total_coffees_consumed", "Total number of consumed coffees").register();
-    }
-
+    @Counted(name = "total_coffees_retrieved", absolute = true, monotonic = true)
     public String retrieveCoffee() {
-        consumedCoffees.inc();
+        coffeesConsumed.inc();
         return "Coffee!";
     }
 

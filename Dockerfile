@@ -1,5 +1,5 @@
-FROM tomee:8-jre-7.0.3-plus
+FROM open-liberty:javaee7
 
-COPY docker/*.jar /usr/local/tomee/lib/
+COPY openliberty/server.xml /config/
 
-COPY target/hello-prometheus.war /usr/local/tomee/webapps/
+COPY target/hello-prometheus.war /config/dropins/
