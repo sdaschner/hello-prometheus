@@ -3,3 +3,7 @@
 Integrating Prometheus into Java EE applications using the Java API and a thin WAR file approach.
 
 In order to build the Docker image, the `simpleclient-0.0.26.jar` and `simpleclient_common-0.0.26.jar` dependencies need to exist in `docker/` as shown in the https://blog.sebastian-daschner.com/entries/prometheus-java-ee[video].
+
+For a similar approach using MicroProfile Metrics, have a look at the https://github.com/sdaschner/hello-prometheus/tree/microprofile[microprofile] branch.
+
+//Also have a look at two videos, showing the https://blog.sebastian-daschner.com/entries/prometheus-java-ee[Prometheus Java API] and [MicroProfile Metrics].
