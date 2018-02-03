@@ -2,3 +2,5 @@
 
 Integrating Prometheus into Java EE applications using the MicroProfile Metrics API and a thin WAR file approach.
 The project is deployed to OpenLiberty.
+
+Please see the corresponding https://blog.sebastian-daschner.com/entries/prometheus-java-ee-microprofile[video^].
